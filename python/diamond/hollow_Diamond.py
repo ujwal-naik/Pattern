@@ -10,7 +10,7 @@ for i in range (row):
     else:
         hollow = " " * (2 * i -1)
         print(spaces + "*" + hollow + "*"  )
-#lowwer half
+#lower half
 for j in range (row - 2,-1,-1):
     spaces = " " * (row - j - 1)
     if j ==0:
