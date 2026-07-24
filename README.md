@@ -19,6 +19,21 @@ Make sure you have Python installed on your system. You can verify it by running
 python --version
 ```
 ## Example 
-*Equilateral triangle
+~~~
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *
 
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    *
+~~~
 *Check out the [Triangle Pattern Script](equilateral_triangle.py) for details.
