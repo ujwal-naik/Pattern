@@ -66,6 +66,3 @@ python diamond.py
 - **Boundary Validation**: The condition `j == 0 or j == 2 * i` identifies the exact outer edges of the pattern.
 - **Hollow Core**: Any index that does not match the boundary condition defaults to a space `" "`.
 
-## 📜 License
-
-This project is open-source and available under the MIT License.
