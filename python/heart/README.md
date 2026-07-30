@@ -47,10 +47,9 @@ Both patterns rely on the classic 3D heart algebraic equation:
 ---
 
 ## ⚙️ Customization
-~~~
+
 You can easily alter the look and size of the output shapes by tweaking the following parameters in the loops:
 
 *   **Size:** Decrease the increments (e.g., multiply `col` by `0.05` instead of `0.1`) and scale up the `range()` boundaries to increase the overall resolution.
 *   **Characters:** Swap out `"*"` for alternative characters like `"♥"`, `"#"`, or letters to create personalized text art.
 *   **Proportions:** Modify the aspect ratio multipliers (`0.1` and `0.15`) to make the heart wider or taller depending on your terminal font settings.
-~~~
