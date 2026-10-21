@@ -1,0 +1,69 @@
+# Concentric Square Pattern Generator
+
+A lightweight Python script that generates a grid of concentric numerical squares. Given an integer `n`, the script calculates a \((2n - 1) \times (2n - 1)\) matrix where the numbers decrease step-by-step from `n` on the outermost layer down to `1` at the exact center.
+
+## 🚀 Visual Example (`n = 4`)
+
+The script dynamically calculates boundaries to create perfectly symmetric layers:
+
+```text
+4 4 4 4 4 4 4 
+4 3 3 3 3 3 4 
+4 3 2 2 2 3 4 
+4 3 2 1 2 3 4 
+4 3 2 2 2 3 4 
+4 3 3 3 3 3 4 
+4 4 4 4 4 4 4 
+```
+
+## 🧠 How the Algorithm Works
+
+Instead of using complex conditional state loops or modifying an existing 2D array, this algorithm uses a **mathematical distance-to-border approach** executed in \(O(N^2)\) time:
+
+1. **Grid Setup**: Calculates the total grid diameter using `size = 2 * n - 1`.
+2. **Coordinate Evaluation**: Iterates through every coordinate `(i, j)` in the grid.
+3. **Boundary Distances**: Finds the absolute distance from the current cell to all four edges:
+   - `top = i`
+   - `left = j`
+   - `bottom = size - 1 - i`
+   - `right = size - 1 - j`
+4. **Layer Value**: The closest edge (`min()`) determines which concentric ring the cell occupies. Subtracting this index from `n` yields the correct value: 
+   \[\text{value} = n - \min(\text{top}, \text{left}, \text{bottom}, \text{right})\]
+
+## 💻 Usage
+
+### Prerequisites
+* Python 3.x
+
+### Running the Script
+
+1. Copy the code into a file named `pattern.py`:
+
+```python
+def print_concentric_square(n):
+    size = 2 * n - 1
+    for i in range(size):
+        for j in range(size):
+            top = i
+            left = j
+            bottom = size - 1 - i
+            right = size - 1 - j
+
+            val = n - min(top, left, bottom, right)
+            print(val, end=" ")
+        print()
+
+if __name__ == "__main__":
+    # Change this value to scale the square
+    print_concentric_square(n=4)
+```
+
+2. Run the script from your terminal:
+```bash
+python pattern.py
+```
+
+## ⚙️ Complexity Analysis
+
+* **Time Complexity**: \(\mathcal{O}(N^2)\) where \(N\) is the input value `n`. The nested loops run exactly \((2n-1) \times (2n-1)\) times.
+* **Space Complexity**: \(\mathcal{O}(1)\) Auxiliary Space. The algorithm prints the pattern directly to the standard output stream without storing the grid structure in memory.
